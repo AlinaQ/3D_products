@@ -1,0 +1,51 @@
+/*!
+ * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.hcolor1 {
+    color: #fff;
+    font-size: 3.5em; 
+    /*background-color: rgba(0,0,0,0.5);*/
+}
+
+.hcolor2 {
+    color: #fff;
+    /*background-color: rgba(0,0,0,0.5);*/
+}
+
+.jumbotron {
+  /*background-image:url("../img/3d-printer.jpg");*/
+    background-image:url("../img/SUGARLAB_01.jpg");
+}
+
+.logo3d {
+    width: auto;
+    height: 40px;
+}
+
+.product1 {
+    width: auto;
+    height: 500px;
+}
+
+.navtxt {
+    margin: 10px; 
+}
