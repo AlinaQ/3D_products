@@ -100,7 +100,8 @@ loadScripts();
                         <input class='btn btn-primary' data-sku-add='$sku' type='button' value='Add to Cart'/>
 						</div>
 						</div>
-						</div>*/
+						</div>
+                */
             }
             echo $html;
 

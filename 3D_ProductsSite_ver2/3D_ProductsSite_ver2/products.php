@@ -1,11 +1,79 @@
 <?php
 
 require_once('init.php');
+
 loadScripts();
 
     $data = array("status" => "not set!");
 
-    if(Utils::isGET()) {
+        if(Utils::isPOST()) {
+        // post means either to delete or add a user
+        $parameters = new Parameters("POST");
+
+        $action = $parameters->getValue('action');
+        $user_name = $parameters->getValue('username');
+
+        //$data = array("action" => $action, "user_name" => $user_name);
+        if($action == 'delete' && !empty($user_name)) {
+
+            $um = new ProductManager();
+            $um->deleteUser($user_name);
+            $data = array("status" => "success", "msg" => "User '$user_name' deleted.");
+            echo json_encode($data, JSON_FORCE_OBJECT);
+            return;
+
+        } else if($action == 'update' && !empty($user_name)) {
+            $newFirstName = $parameters->getValue('newFirstName');
+
+            if(!empty($newFirstName)) {
+
+                $um = new ProductManager();
+                $count = $um->updateUserFirstName($user_name, $newFirstName);
+                if($count > 0) {
+                    $data = array("status" => "success", "msg" =>
+                        "User '$user_name' updated with new first name ('$newFirstName').");
+                } else {
+                    $data = array("status" => "fail", "msg" =>
+                        "User '$user_name' was NOT updated with new first name ('$newFirstName').");
+                }
+            } else {
+                $data = array("status" => "fail", "msg" =>
+                    "New user name must be present - value was '$newFirstName' for '$user_name'.");
+
+            }
+            echo json_encode($data, JSON_FORCE_OBJECT);
+            return;
+
+        } else if($action == 'add') {
+            $newFirstName = $parameters->getValue('newFirstName');
+            $newLastName = $parameters->getValue('newLastName');
+            $newUserName = $parameters->getValue('newUserName');
+
+            if(!empty($newFirstName) && !empty($newLastName) && !empty($newUserName)) {
+                $data = array("status" => "success", "msg" => "User added.");
+                $um = new ProductManager();
+                $um->addUser($newFirstName, $newLastName, $newUserName);
+
+            } else {
+                $data = array("status" => "fail", "msg" => "First name, last name, and user name cannot be empty.");
+            }
+            echo json_encode($data, JSON_FORCE_OBJECT);
+            return;
+
+        }else {
+            $data = array("status" => "fail", "msg" => "Action not understood.");
+        }
+
+        echo json_encode($data, JSON_FORCE_OBJECT);
+        return;
+            
+            
+            
+            //GET.
+            
+            
+
+    } else if(Utils::isGET()) {
         $pm = new ProductManager();
         $rows = $pm->listProducts();
 
