@@ -13,10 +13,30 @@
   </div>
   
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
+
     <script>
+
         /*<![CDATA[*/
         $(document).ready(function() {
 
+            
+            /******* Popup Login *******/
+        
+            $("#modal_trigger").leanModal({
+                top: 100,
+                overlay: 0.6,
+                closeButton: ".modal_close"
+            });
+
+            $("#login_form").click(function() {
+                $(".social_login").hide();
+                $(".user_login").show();
+                return false;
+            });
+            
+            
+            
             //
             function loadProducts() {
                 $.ajax({
@@ -155,7 +175,7 @@
 
             function loadUsers() {
                 $.ajax({
-                    url: "./products.php",
+                    url: "./users.php",
                     type: "GET",
                     dataType: 'html',
                     success: function(returnedData) {
@@ -172,29 +192,23 @@
             loadUsers();
 
 
-            $("#addNewProducts").submit(function(e) {
+            $("#addNewUser").submit(function(e) {
                 e.preventDefault();
 
                 // get values from form
-                var itemName = $("#addItemName").val();
-                var itemImg = $("#addItemImg").val();
-                var Desp = $("#addDesp").val();
-                var Price = $("#addPrice").val();
-                
+                var firstName = $("#addFirstName").val();
+                var lastName = $("#addLastName").val();
+                var userName = $("#addUserName").val();
 
                 //console.log(firstName, lastName, userName);
 
                 $.ajax({
-                    url: "./products.php",
+                    url: "users.php",
                     type: "POST",
                     dataType: "JSON",
-                    data: {action: "add", 
-                           newitemName: itemName,
-                           newitemImg: itemImg, 
-                           newDesp: Desp,
-                           newPrice: Price},
-                       
-                        success: function(returnedData) {
+                    data: {action: "add", newFirstName: firstName,
+                        newLastName: lastName, newUserName: userName},
+                    success: function(returnedData) {
                         loadUsers();
                         console.log(returnedData);
                     },
@@ -211,7 +225,7 @@
                 loginValue = loginValue.replace("d-", "");
 
                 $.ajax({
-                    url: "./products.php",
+                    url: "./users.php",
                     type: "POST",
                     dataType: 'json',
                     data: {action: "delete", username: loginValue},
