@@ -44,10 +44,10 @@ class ProductManager {
         return $affectedRows;
     }
 
-    public function addUser($firstName, $lastName, $userName) {
+    public function addUser($firstName, $lastName, $userName, $image) {
 
         $sql = "INSERT INTO product (SKU, item_price, description, img)
-            VALUES ('d', 'f', 'd', 'g')";
+            VALUES ('$firstName', '$lastName', '$userName', '$image')";
         $affectedRows = $this->db->affectRows($sql);
         return $affectedRows;
     }

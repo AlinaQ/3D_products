@@ -45,14 +45,16 @@ loadScripts();
             return;
 
         } else if($action == 'add') {
-            $newFirstName = $parameters->getValue('newFirstName');
-            $newLastName = $parameters->getValue('newLastName');
-            $newUserName = $parameters->getValue('newUserName');
+ 
+            $newitemName = $parameters->getValue('newitemName');
+            $newitemImg = $parameters->getValue('newitemImg');
+            $newDesp = $parameters->getValue('newDesp');
+            $newPrice= $parameters->getValue('newPrice');
 
-            if(!empty($newFirstName) && !empty($newLastName) && !empty($newUserName)) {
+            if(!empty($newitemName) && !empty($newitemImg) && !empty($newDesp) && !empty($newPrice)) {
                 $data = array("status" => "success", "msg" => "User added.");
                 $um = new ProductManager();
-                $um->addUser($newFirstName, $newLastName, $newUserName);
+                $um->addUser($newitemName, $newitemImg, $newDesp, $newPrice);
 
             } else {
                 $data = array("status" => "fail", "msg" => "First name, last name, and user name cannot be empty.");
@@ -90,7 +92,8 @@ loadScripts();
                         <h3 data-sku-desc='$sku'>$desc</h3>
                         <input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/>
                         <p data-sku-price='$sku'>$price</p>
-						
+						<input id='d-$sku' class='delete btn btn-default' type='button' value='Delete'/>
+                        <input id='u-$sku' class='update btn btn-default' type='button' value='Update'/> <br/><br/>
                         <input class='btn btn-primary' data-sku-add='$sku' type='button' value='Add to Cart'/>
 					  </div>
 					  </div>

@@ -172,13 +172,15 @@
             loadUsers();
 
 
-            $("#addNewUser").submit(function(e) {
+            $("#addNewProducts").submit(function(e) {
                 e.preventDefault();
 
                 // get values from form
-                var firstName = $("#addFirstName").val();
-                var lastName = $("#addLastName").val();
-                var userName = $("#addUserName").val();
+                var itemName = $("#addItemName").val();
+                var itemImg = $("#addItemImg").val();
+                var Desp = $("#addDesp").val();
+                var Price = $("#addPrice").val();
+                
 
                 //console.log(firstName, lastName, userName);
 
@@ -187,9 +189,11 @@
                     type: "POST",
                     dataType: "JSON",
                     data: {action: "add", 
-                           newFirstName: firstName,
-                           newLastName: lastName, 
-                           newUserName: userName},
+                           newitemName: itemName,
+                           newitemImg: itemImg, 
+                           newDesp: Desp,
+                           newPrice: Price},
+                       
                         success: function(returnedData) {
                         loadUsers();
                         console.log(returnedData);
