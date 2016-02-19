@@ -1,0 +1,89 @@
+<!-- View Fragment -->
+<div id="container" metal:define-macro="main">
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <div class="hcolor1">3D Printing Products</div>
+            <p class="hcolor2">Find the best 3D printing or 3D printed products, right here on 3D Enterprise! We distribute the best 3D products of the highest quality.</p>
+            <p><a class="btn btn-primary btn-large">Learn More</a>
+            </p>
+        </header>
+		
+		<!--http://blog.craftunique.com/wp-content/uploads/2014/10/3DprintedObjects.png-->
+
+        <hr/>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Most Popular</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+		
+        <!-- Page Features -->
+        <!--<div id="productslist" class="row text-center">-->
+		<!-- OVER HERE, IT GETS PRODUCTS FROM THE DATABASE!! -->        		
+        <!--</div>-->
+		
+		
+		<!-- DISPLAYS USER ADDED ITEMS -->
+		<div class="row text-center">
+			<div id="users">		
+			<div id='userrows'>
+			  <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+			
+			  <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+			</div>
+		  </div>​
+        </div>
+		
+		<!--Start Cart -->
+		<button id="startCart" class="btn btn-default">Start Cart</button>
+		<button id="cancelCart" class="btn btn-default">Cancel Cart</button> 
+		<button id="checkoutcart" class="btn btn-default" style="float:right">Checkout</button>
+		<br/><br/>
+		
+		
+		<!--SHOPPING Cart -->
+	    <div id="shoppingCart">
+             
+       <!-- <li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
+            <input type="button" data-remove-button="remove" value="X"/></li> -->
+            
+        </div>
+        <!-- /.row -->
+	
+	
+		<br/><br/>
+	
+	
+		<!-- ADD NEW ITEMS -->
+		<div id="content">
+		
+		<!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Add Items</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+ 
+		  <form id="addNewProducts">
+			<input id="addItemName" type="text" placeholder="SKU" required="required"/>
+			<input id="addItemImg" type="text" placeholder="Price" required="required"/>
+            <input id="addDesp" type="text" placeholder="Item Name" required="required"/>
+			<input id="addPrice" type="text" placeholder="Image URL" required="required"/>
+			<input id="submitNewUser" class=" btn btn-default" type="submit" value="Add"/>
+		  </form>
+		  
+		  <br/><br/>
+		  
+
+		</div> <!--Content Closure -->
+
+
+        </div>
+</div>
