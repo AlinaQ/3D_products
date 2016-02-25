@@ -1086,7 +1086,12 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #fff; 
+ /*  background: -webkit-linear-gradient(white, #005375);  
+  background: -o-linear-gradient(white, #005375);  
+  background: -moz-linear-gradient(white, #005375);  
+  background: linear-gradient(#005375, white);*/
+    
 }
 input,
 button,

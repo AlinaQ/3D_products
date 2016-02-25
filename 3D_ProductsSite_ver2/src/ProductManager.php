@@ -14,7 +14,7 @@ class ProductManager {
     }
 
     public function listProducts() {
-        $sql = "SELECT SKU, item_price, description, img FROM product";
+        $sql = "SELECT SKU, item_price, description, img FROM product ORDER BY id DESC";
         $rows = $this->db->query($sql);
         return $rows;
     }

@@ -315,7 +315,9 @@
                     dataType: 'html',
                     success: function(returnedData) {
                         //console.log("cart checkout response: ", returnedData);
-                        $("#userrows").html(returnedData);
+                        
+                        /*userrows*/
+                        $("#productslist").html(returnedData);
                         //window.location.href = "user-editor.html";
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -361,7 +363,7 @@
 
             });
 
-            $('#users').on('click', '.delete', function() {
+            $('#productslist').on('click', '.delete', function() {
                 var loginValue = this.getAttribute("id");
                 loginValue = loginValue.replace("d-", "");
 
@@ -382,7 +384,7 @@
 
             });
 
-            $('#users').on('click', '.update', function() {
+            $('#productslist').on('click', '.update', function() {
                 var loginValue = this.getAttribute("id");
                 //var firstName = $(this).val(
                 loginValue = loginValue.replace("u-", "");
@@ -408,7 +410,7 @@
 
 
             // http://stackoverflow.com/questions/11882693/change-table-cell-from-span-to-input-on-click
-            $('#users').on('click', 'span', function() {
+            $('#productslist').on('click', 'span', function() {
 
                 var $td = $(this).parent();
                 var $input = null;

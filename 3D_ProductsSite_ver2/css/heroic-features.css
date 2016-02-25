@@ -150,7 +150,7 @@ a.btn1_red {
 		padding: 20px;
 }
 /* Social Login Form */
-
+/*
 .social_login .social_box {
 		display: block;
 		clear: both;
@@ -162,7 +162,7 @@ a.btn1_red {
 
 .social_login .social_box:hover {
 		background: #E4E4E2;
-}
+}*/
 
 .centeredText {
 		text-align: center;
@@ -182,10 +182,23 @@ a.btn1_red {
 }
 /* User Login Form */
 
-.user_login {
-		display: none;
+
+.social_login label {
+		display: block;
+		margin-bottom: 5px;
 }
 
+.social_login input[type="text"],
+.social_login input[type="email"],
+.social_login input[type="password"] {
+		display: block;
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #DDD;
+		color: #666;
+}
+
+/*
 .user_login label {
 		display: block;
 		margin-bottom: 5px;
@@ -199,4 +212,4 @@ a.btn1_red {
 		padding: 10px;
 		border: 1px solid #DDD;
 		color: #666;
-}
+}*/

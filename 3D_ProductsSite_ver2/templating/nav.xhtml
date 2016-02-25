@@ -29,24 +29,39 @@
                     </li>
                     
                     <li>
-                        
-                        <a  class="navtxt" id="modal_trigger" href="#modal">Admin Login</a>
+                      
+                       <a  class="navtxt" id="modal_trigger" href="#modal">Admin Login</a>
+                       <!-- <a  class="navtxt" id="modal_trigger" href="#modal">Admin Login</a>-->
                         
                         <div id="modal" class="popupContainer" style="display:none;">
 				            <header class="popupHeader">
                                 <span class="header_title">Login</span>
-                                <span class="modal_close"><i class="fa fa-times"></i></span>
+                                <span class="modal_close"> x </span>
                             </header>
 
                             <section class="popupBody">
                                 <div class="social_login">
-                                    <div class="action_btns">
-                                        <h3>Are you an admin?</h3>
-                                            <div class="one_half"><a id="login_form" class="btn1">Yes</a></div>
-                                    </div>
-                                </div>
+                                   <form>
+                                        <label>Username</label>
+                                        <input type="text"/> <br/>
+
+                                        <label>Password</label>
+                                        <input type="password"/> <br/>
+
+                                        <div class="action_btns">
+                                            <div class="one_half last"><a class="btn1 btn1_red">Login</a></div>
+                                        </div>
+                                    </form>
                                     
-                                <div class="user_login">
+                                 <!--   <div class="action_btns">
+                                        <h3>Are you an admin?</h3>
+                                            <div class="one_half">
+                                        <a id="login_form" class="btn1">Yes</a></div>
+                                    </div> -->
+                                    
+                                </div> 
+                                    
+                             <!--   <div class="user_login">
                                     <form>
                                         <label>Username</label>
                                         <input type="text"/> <br/>
@@ -58,7 +73,10 @@
                                             <div class="one_half last"><a class="btn1 btn1_red">Login</a></div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> -->
+                                
+                                
+                                                        
                             </section>
 		                  </div>
                         
