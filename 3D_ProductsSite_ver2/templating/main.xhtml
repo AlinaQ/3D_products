@@ -27,13 +27,30 @@
         </div>
         <!-- /.row -->
  
-		  <form id="addNewProducts">
+ <form id="addNewProducts">
+              <table style="width:75%; background-color: transparent"> <!--#34495E-->
+              <tr>
+                <td>SKU</td>
+                <td>Price</td> 
+                <td>Item Name</td>
+                <td>Image URL</td>
+              </tr>
+              <tr>
+                <td><input id="addItemName" type="text" placeholder="SKU" required="required"/></td>
+                <td><input id="addItemImg" type="text" placeholder="Price" required="required"/></td> 
+                <td><input id="addDesp" type="text" placeholder="Item Name" required="required"/></td>
+                <td><input id="addPrice" type="text" placeholder="Image URL" required="required"/></td>
+                <td><input id="submitNewUser" class=" btn btn-default" type="submit" value="Add"/></td>
+              </tr>
+            </table>		
+		  </form>
+		<!--  <form id="addNewProducts">
 			<input id="addItemName" type="text" placeholder="SKU" required="required"/>
 			<input id="addItemImg" type="text" placeholder="Price" required="required"/>
             <input id="addDesp" type="text" placeholder="Item Name" required="required"/>
 			<input id="addPrice" type="text" placeholder="Image URL" required="required"/>
 			<input id="submitNewUser" class=" btn btn-default" type="submit" value="Add"/>
-		  </form>
+		  </form> -->
 		  
 		  <br/><br/>
 		  

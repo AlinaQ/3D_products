@@ -89,7 +89,7 @@ loadScripts();
 						<div class='thumbnail'>
 						<img class='product1' alt='' width='800' height='500' src='$img'></img>
 						<div class='caption'>
-                        <h3 data-sku-desc='$sku'>$desc</h3>
+                        <h3 data-sku-desc='$sku' class='first_name'>$desc</h3>
                         <input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/>
                         <p data-sku-price='$sku'>$price</p>
 						<input id='d-$sku' class='delete btn btn-default' type='button' value='Delete'/>

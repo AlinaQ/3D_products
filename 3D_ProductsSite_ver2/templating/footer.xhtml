@@ -410,9 +410,10 @@
 
 
             // http://stackoverflow.com/questions/11882693/change-table-cell-from-span-to-input-on-click
-            $('#productslist').on('click', 'span', function() {
+            $('#productslist').on('click', 'h3', function() {
 
-                var $td = $(this).parent();
+                var $td = $(this);
+                //var $td = $(this).parent();
                 var $input = null;
 
                 var val = $(this).html();

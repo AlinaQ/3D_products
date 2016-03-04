@@ -33,7 +33,7 @@ class ProductManager {
     
 //INSERT INTO DATABASE    
         public function updateUserFirstName($login, $newFirstName) {
-        $sql = "UPDATE user SET first_name = '$newFirstName' WHERE user_name = '$login'";
+        $sql = "UPDATE product SET description = '$newFirstName' WHERE SKU = '$login'";
         $affectedRows = $this->db->affectRows($sql);
         return $affectedRows;
     }
